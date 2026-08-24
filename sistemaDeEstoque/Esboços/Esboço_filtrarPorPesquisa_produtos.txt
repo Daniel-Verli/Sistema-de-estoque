@@ -1,0 +1,72 @@
+
+- Filtragem por pesquisa 
+- FIltragem por categoria
+- Filtragem por status
+
+**Filtragem por pesquisa (prefixo)**
+
+export buscarProdutosPorPesquisa(nomeBusca_produto){
+    let listaFiltrados;
+    nomeBusca_produto = nomeBusca_categoria.trim().toLowerCase();
+    listaFiltrados = []; //Cria uma lista vazia de categorias filtradas
+
+    // Varre a lista até tamanhoLista
+    for (let i = 0; i < listaProdutos.length; i++) {
+        let produtoAtual = listaProdutos[i].nome_categoria.toLowerCase(); //Obtém produto no índice i, com caixa baixa
+        let nomeIgual = false;
+        let k = 0;
+        while (k < produtoAtual.length && k < nomeBusca_produto.length) {
+          if(produtoAtual[k] !== nomeBusca_produto[k]){
+                nomeIgual = false;
+                break;
+            }
+
+            k++;
+        }
+
+        //Se nomeIgual verdadeiro, filtra nomeDoIndice
+        if (nomeIgual) {
+            listaFiltrados.push(listaProdutos[i]);
+        }
+            
+    }
+}
+
+**Filtragem por categoria**
+
+export buscarProdutosPorCategoria(id_categoria){
+    let listaFiltrados;
+    listaFiltradosPorCategoria = []; //Cria uma lista vazia de categorias filtradas
+
+    // Varre a lista até tamanhoLista
+
+    for (let i = 0; i < listaProdutos.length; i++) {
+       if (listaProdutos[i].id_categoria == id_categoria){
+            listaFiltradosPorCategoria.push(listaProdutos[i]);
+       }
+    }
+
+    return listaFiltradosPorCategoria
+}
+
+**Filtragem por status**
+
+export buscarProdutosPorStatus(id_status){
+    let listaFiltrados;
+    listaFiltradosPorStatus = []; //Cria uma lista vazia de categorias filtradas
+
+    // Varre a lista até tamanhoLista
+    
+    for (let i = 0; i < listaProdutos.length; i++) {
+       if (listaProdutos[i].status.id_status == id_status){
+            listaFiltradosPorStatus.push(listaProdutos[i]);
+       }
+    }
+
+    return listaFiltradosPorCategoria
+}
+
+categoria = {
+    id_categoria
+    nome_categoria
+}
