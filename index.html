@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque Fácil | Dashboard</title>
+    <link rel="stylesheet" href="./src/styles/index.css">
+</head>
+<body>
+    <aside class="menu-soso">
+        <h2 class="h2so">ESTOQUE FÁCIL</h2>
+        <nav class="nav-lateral">
+            <a class="btn-nav active" href="./index.html">Dashboard</a>
+            <a class="btn-nav" href="./src/pages/produtos.html">Produtos</a>
+            <a class="btn-nav" href="./src/pages/categorias.html">Categorias</a>
+        </nav>
+        <hr class="divisor-menu">
+        <button class="btn-sair" type="button" onclick="alert('Sessão encerrada.')">Logout</button>
+    </aside>
+
+    <main class="conteudo-principal">
+        <section id="viewDashboard" class="pagina-view active">
+            <h1 class="titulo-dashboard">Visão Geral do Estoque</h1>
+
+            <div class="cards-grid">
+                <div class="card-dash sucesso">
+                    <h3>Quantidade Total de Produtos</h3>
+                    <div class="valor-destaque" id="totalProdutos">0</div>
+                </div>
+
+                <div class="card-dash alerta">
+                    <h3>Abaixo do Estoque Mínimo</h3>
+                    <div class="valor-destaque" id="qtdAbaixoMinimo">0</div>
+                </div>
+
+                <div class="card-dash">
+                    <h3>Valor Total em Estoque</h3>
+                    <div class="valor-destaque" id="valorTotalEstoque">R$ 0,00</div>
+                </div>
+            </div>
+
+            <div class="tabela-section">
+                <header class="acoes-header" style="padding: 20px 20px 0 20px; margin-bottom: 15px;">
+                    <h2 style="font-size: 1.2rem; color: #4db6ac;">Produtos com Estoque Crítico</h2>
+                </header>
+                <table class="tabela-estoque">
+                    <thead>
+                        <tr class="cadastrar">
+                            <th>Nome</th>
+                            <th>Qtd. Atual</th>
+                            <th>Qtd. Mínima</th>
+                            <th>Preço Un.</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaCriticosBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="./src/scripts/index.js"></script>
+</body>
+</html>
